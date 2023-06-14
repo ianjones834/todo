@@ -1,0 +1,11 @@
+<input type="text" #todo>
+<button type="button" (click)="add(todo)">Add</button>
+<ol>
+  <li *ngFor="let todoItem of todoItems; index as i; let first = first; let last = last">
+    {{todoItem}}
+    <button type="button" (click)="remove(i)">X</button>
+    <button *ngIf="!first" type="button" (click)="up(i)">^</button>
+    <button *ngIf="!last" type="button" (click)="down(i)">v</button>
+  </li>
+</ol>
+{{todoItems | json}}
