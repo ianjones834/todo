@@ -6,29 +6,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent {
-  todoItems: string[] = [];
+  taskNames: string[] = [];
 
-  add = (input: HTMLInputElement) => {
-    this.todoItems.push(input.value);
-    console.log(this.todoItems);
-    input.value = '';
+  add = (taskInput: HTMLInputElement) => {
+    this.taskNames.push(taskInput.value);
+    console.log(this.taskNames);
+    taskInput.value = '';
   }
 
   remove = (index: number) => {
-    this.todoItems = this.todoItems.filter((val, i) => {
+    this.taskNames = this.taskNames.filter((value, i) => {
       return i != index;
     })
   }
 
   up = (index: number) => {
-    const todoItem = this.todoItems[index];
-    this.todoItems[index] = this.todoItems[index - 1];
-    this.todoItems[index - 1] = todoItem;
+    const taskName = this.taskNames[index];
+    this.taskNames[index] = this.taskNames[index - 1];
+    this.taskNames[index - 1] = taskName;
   }
 
   down = (index: number) => {
-    const todoItem = this.todoItems[index];
-    this.todoItems[index] = this.todoItems[index + 1];
-    this.todoItems[index + 1] = todoItem;
+    const taskName = this.taskNames[index];
+    this.taskNames[index] = this.taskNames[index + 1];
+    this.taskNames[index + 1] = taskName;
   }
 }
