@@ -17,14 +17,18 @@ export class TaskListComponent {
   @Output()
   removeTask = new EventEmitter<Task>();
 
-  handleAdd = (input: HTMLInputElement) => {
+  handleAdd = (description: HTMLInputElement, date: HTMLInputElement) => {
 
     this.addTask.emit({
       id: null,
-      description: input.value
+      description: description.value,
+      date: date.valueAsDate,
     })
 
-    input.value = '';
+    description.value = '';
+    date.value = '';
+
+    description.focus();
   }
 
   handleRemove = (task: Task) => {

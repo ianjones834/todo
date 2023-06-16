@@ -1,11 +1,13 @@
 <ol>
   <li *ngFor="let task of tasks">
     {{task.description}}
+    {{task.date | date}}
     <button type="button" (click)="handleRemove(task)">X</button>
   </li>
 </ol>
-<input type="text" (keydown.enter)="handleAdd(description)" #description>
-<button type="button"(click)="handleAdd(description)">
+<input type="text" (keydown.enter)="handleAdd(description, date)" #description>
+<input type="date" (keydown.enter)="handleAdd(description, date)" #date>
+<button type="button"(click)="handleAdd(description, date)">
   Add
 </button>
 <pre>{{tasks | json}}</pre>
