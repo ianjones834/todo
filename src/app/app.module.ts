@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoListModule } from './todo-list/todo-list.module';
+import { TaskManagerModule } from './task-manager/task-manager.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { TodoListModule } from './todo-list/todo-list.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TodoListModule
+    TaskManagerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

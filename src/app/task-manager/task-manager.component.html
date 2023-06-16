@@ -1,0 +1,8 @@
+<ng-container *ngIf="(tasks$ | async) as tasks">
+  <app-task-list
+    [tasks]="tasks"
+    (addTask)="onAddTask($event)"
+    (removeTask)="onRemoveTask($event)"
+  ></app-task-list>
+  <app-task-calendar></app-task-calendar>
+</ng-container>
