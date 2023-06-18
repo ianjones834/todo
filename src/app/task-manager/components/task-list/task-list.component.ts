@@ -18,6 +18,10 @@ export class TaskListComponent {
   removeTask = new EventEmitter<Task>();
 
   handleAdd = (description: HTMLInputElement, date: HTMLInputElement) => {
+    if (!description.value.trim()) {
+      alert('Description is required');
+      return;
+    }
 
     this.addTask.emit({
       id: null,
@@ -34,6 +38,4 @@ export class TaskListComponent {
   handleRemove = (task: Task) => {
     this.removeTask.emit(task);
   }
-
-
 }
